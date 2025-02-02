@@ -1,0 +1,5 @@
+# Specify the required Python version
+python_version == "3.10"
+
+# Required package versions
+pygame==2.6.1
