@@ -98,8 +98,8 @@ def mainScreen():
     mainScreenBackground = pygame.image.load("mainScreen.jpg")
     window.blit(mainScreenBackground, (0, 0))
     main_display("Garden Defense", windowWidth/2, 200, 80)
-    #elevatormusic = pygame.mixer.Sound("elevatormusic.wav")
-    #pygame.mixer.Sound.play(elevatormusic)
+    elevatormusic = pygame.mixer.Sound("elevatormusic.wav")
+    pygame.mixer.Sound.play(elevatormusic)
     musicTime = t
 
     gnome1 = pygame.image.load("knome1.png")
@@ -128,7 +128,7 @@ def mainScreen():
 
         t = pygame.time.get_ticks()
         if t > musicTime + 195000:
-            #pygame.mixer.Sound.play(elevatormusic)
+            pygame.mixer.Sound.play(elevatormusic)
             musicTime = t
 
 
@@ -140,15 +140,15 @@ def mainScreen():
         if keys[pygame.K_1] or keys[pygame.K_KP1]:
             gnum = 1
             gnome = gnome1
-            #pygame.mixer.Sound.stop(elevatormusic)
+            pygame.mixer.Sound.stop(elevatormusic)
         elif keys[pygame.K_2] or keys[pygame.K_KP2]:
             gnum = 1
             gnome = gnome2
-            #pygame.mixer.Sound.stop(elevatormusic)
+            pygame.mixer.Sound.stop(elevatormusic)
         elif keys[pygame.K_3] or keys[pygame.K_KP3]:
             gnum = 1
             gnome = gnome3
-            #pygame.mixer.Sound.stop(elevatormusic)
+            pygame.mixer.Sound.stop(elevatormusic)
 
 
 
@@ -182,8 +182,8 @@ def game_loop(GNOME):
     pressed_down = False
     pressed_space = False
 
-    #elevatormusic = pygame.mixer.Sound("elevatormusic.wav")
-    #pygame.mixer.Sound.play(elevatormusic)
+    elevatormusic = pygame.mixer.Sound("elevatormusic.wav")
+    pygame.mixer.Sound.play(elevatormusic)
 
 
     while numberOfLives > 0:
@@ -300,7 +300,7 @@ def game_loop(GNOME):
         difficultyfactor += .0009
         pygame.display.update()
         clock.tick(FPS)
-    #pygame.mixer.Sound.stop(elevatormusic)
+    pygame.mixer.Sound.stop(elevatormusic)
     if score * (bulletHit / bulletCount) > high_score:
         high_score = (score * (bulletHit / bulletCount))
     gameEnd(score, (bulletHit/bulletCount))
